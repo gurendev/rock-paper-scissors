@@ -9,3 +9,11 @@ const getComputerChoice = () => {
     }
 }
 
+const getHumanChoice = () => {
+    let choice = "";
+    do {
+        choice = prompt("rock, paper or scissors: ");
+    } while (choice !== "rock" && choice !== "paper" && choice !== "scissors");
+    return choice;
+}
+
