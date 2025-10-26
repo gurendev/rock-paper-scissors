@@ -28,9 +28,22 @@ const playRound = (humanChoice, computerChoice) => {
         console.log("Draw!");
     } else if (choices[humanIndex + 1] === computerChoice) {
         console.log(`Computer wins with ${computerChoice} vs human's ${humanChoice}`);
+        computerScore++;
     } else {
         console.log(`Human wins with ${humanChoice} vs computer's ${computerChoice}`);
+        humanScore++;
     }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+const playGame = () => {
+    while (computerScore < 5 && humanScore < 5) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    if (computerScore === 5) {
+        console.log("Computer wins the game!");
+    } else {
+        console.log("Human wins the game!");
+    }
+}
+
+playGame();
