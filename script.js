@@ -34,3 +34,14 @@ const playRound = (humanChoice, computerChoice) => {
         humanScore++;
     }
 }
+
+const addChoiceButtonsEvents = () => {
+    const choiceButtons = document.querySelectorAll("button");
+    for (const button of choiceButtons) {
+        button.addEventListener("click", (e) => {
+            playRound(e.target.textContent, getComputerChoice());
+        });
+    }
+}
+
+addChoiceButtonsEvents();
