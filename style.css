@@ -24,6 +24,9 @@ main {
     flex-direction: column;
     width: 600px;
     height: 400px;
+    overflow-y: scroll;
+    line-height: 1.6rem;
+    padding: 1rem;
 }
 
 .choices {

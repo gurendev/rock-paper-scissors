@@ -49,10 +49,18 @@ const displayResult = (result) => {
     const paragraph = document.createElement("p");
     paragraph.textContent = result;
     feedbackContainer.append(paragraph);
+    scrollFeedback();
 }
 
 const makeRoundWinnerString = (winner, winnerChoice, loser, loserChoice) => {
     return `${winner} wins with ${winnerChoice} vs ${loser}'s ${loserChoice}`;
+}
+
+const scrollFeedback = () => {
+    const feedback = document.querySelector(".feedback");
+    if (feedback.scrollHeight > feedback.clientHeight) {
+        feedback.scrollTop = feedback.scrollHeight;
+    }
 }
 
 addChoiceButtonsEvents();
