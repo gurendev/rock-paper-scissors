@@ -25,12 +25,12 @@ const playRound = (humanChoice, computerChoice) => {
     humanIndex = choices.indexOf(humanChoice);
     computerIndex = choices.indexOf(computerChoice);
     if (humanIndex === computerIndex) {
-        console.log("Draw!");
+        displayResult("Draw!");
     } else if (choices[humanIndex + 1] === computerChoice) {
-        console.log(`Computer wins with ${computerChoice} vs human's ${humanChoice}`);
+        displayResult(makeRoundWinnerString("Computer", computerChoice, "Human", humanChoice));
         computerScore++;
     } else {
-        console.log(`Human wins with ${humanChoice} vs computer's ${computerChoice}`);
+        displayResult(makeRoundWinnerString("Human", humanChoice, "Computer", computerChoice));
         humanScore++;
     }
 }
@@ -42,6 +42,17 @@ const addChoiceButtonsEvents = () => {
             playRound(e.target.textContent, getComputerChoice());
         });
     }
+}
+
+const displayResult = (result) => {
+    const feedbackContainer = document.querySelector(".feedback");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = result;
+    feedbackContainer.append(paragraph);
+}
+
+const makeRoundWinnerString = (winner, winnerChoice, loser, loserChoice) => {
+    return `${winner} wins with ${winnerChoice} vs ${loser}'s ${loserChoice}`;
 }
 
 addChoiceButtonsEvents();
