@@ -34,6 +34,28 @@ const playRound = (humanChoice, computerChoice) => {
         humanScore++;
     }
     updateUIScores();
+    checkGameOver();
+}
+
+const endGame = (winner) => {
+    displayResult(`${winner} wins the whole match!! GAME OVER.`);
+    disableChoiceButtons();
+}
+
+const disableChoiceButtons = () => {
+    const choiceButtons = document.querySelectorAll("button");
+    for (const button of choiceButtons) {
+        button.disabled = true;
+    }
+}
+
+const checkGameOver = () => {
+    if (humanScore === 5) {
+        endGame("Human");
+    }
+    if (computerScore === 5) {
+        endGame("Computer");
+    }
 }
 
 const addChoiceButtonsEvents = () => {
