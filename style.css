@@ -3,3 +3,34 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feedback {
+    border: 3px black solid;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+}
+
+.choices {
+    display: flex;
+    gap: 1rem;
+}
+
+.choices button {
+    padding: 1rem 2rem;
+}

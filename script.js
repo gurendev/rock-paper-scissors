@@ -34,16 +34,3 @@ const playRound = (humanChoice, computerChoice) => {
         humanScore++;
     }
 }
-
-const playGame = () => {
-    while (computerScore < 5 && humanScore < 5) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-    if (computerScore === 5) {
-        console.log("Computer wins the game!");
-    } else {
-        console.log("Human wins the game!");
-    }
-}
-
-playGame();
