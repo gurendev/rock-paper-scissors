@@ -37,3 +37,9 @@ main {
 .choices button {
     padding: 1rem 2rem;
 }
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -33,6 +33,7 @@ const playRound = (humanChoice, computerChoice) => {
         displayResult(makeRoundWinnerString("Human", humanChoice, "Computer", computerChoice));
         humanScore++;
     }
+    updateUIScores();
 }
 
 const addChoiceButtonsEvents = () => {
@@ -50,6 +51,13 @@ const displayResult = (result) => {
     paragraph.textContent = result;
     feedbackContainer.append(paragraph);
     scrollFeedback();
+}
+
+const updateUIScores = () => {
+    const humanSpan = document.querySelector("#human-score");
+    const computerSpan = document.querySelector("#computer-score");
+    humanSpan.textContent = humanScore;
+    computerSpan.textContent = computerScore;
 }
 
 const makeRoundWinnerString = (winner, winnerChoice, loser, loserChoice) => {
